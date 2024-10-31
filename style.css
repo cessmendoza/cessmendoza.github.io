@@ -258,7 +258,7 @@ a {
   color: #111;
 }
 a:hover {
-  color: #d93c4d;
+  color: #83640f;
   text-decoration: none;
 }
 ul, ol {
@@ -337,12 +337,12 @@ img {
   vertical-align: middle;
 }
 ::selection {
-  background: #d93c4d;
+  background: #83640f;
   color: #fff;
   text-shadow: none;
 }
 ::-moz-selection {
-  background: #d93c4d;
+  background: #83640f;
   color: #fff;
   text-shadow: none;
 }
@@ -630,7 +630,7 @@ abbr {
   background: #101010;
 }
 .colored {
-  color: #d93c4d !important;
+  color: #83640f !important;
 }
 .color-primary {
   color: #333 !important;
@@ -642,7 +642,7 @@ abbr {
   color: #c1c1c1 !important;
 }
 a.colored-grey:hover {
-  color: #d93c4d !important;
+  color: #83640f !important;
 }
 .text-left {
   text-align: left;
@@ -1353,11 +1353,11 @@ fieldset[disabled] a.btn {
 }
 .btn.btn-accent {
   color: #fff;
-  background-color: #d93c4d;
+  background-color: #83640f;
 }
 .btn.btn-accent:hover {
   color: #fff !important;
-  background-color: #d93c4d;
+  background-color: #83640f;
 }
 .btn.btn-outline-light,
 .btn.btn-outline-accent {
@@ -1378,7 +1378,7 @@ fieldset[disabled] a.btn {
 }
 .btn.btn-outline-accent {
   background: transparent;
-  border-color: #d93c4d;
+  border-color: #83640f;
   color: #f4efe6;
 }
 .btn.btn-outline-accent:hover {
@@ -1535,7 +1535,7 @@ i.icon {
   z-index: 3;
 }
 .social-links a:hover .icon {
-  color: #d93c4d;
+  color: #83640f;
   transform: rotateY(360deg);
 }
 
@@ -1758,7 +1758,7 @@ tfoot {
     left: 0;
     right: 0;
     top: 0;
-    border-bottom: 1px solid #d93c4d;
+    border-bottom: 1px solid #83640f;
     margin: 0 auto;
 }
 h1.page-title {
@@ -2803,8 +2803,8 @@ a.postbox:hover .image-overlay {
     right: 30px;
     width: 150px;
     height: 150px;
-    border-top: 2px dashed #d93c4d;
-    border-right: 2px dashed #d93c4d;
+    border-top: 2px dashed #83640f;
+    border-right: 2px dashed #83640f;
 }
 .border-left-bottom {
     position: absolute;
@@ -2812,17 +2812,17 @@ a.postbox:hover .image-overlay {
     bottom: 30px;
     width: 150px;
     height: 150px;
-    border-left: 2px dashed #d93c4d;
-    border-bottom: 2px dashed #d93c4d;
+    border-left: 2px dashed #83640f;
+    border-bottom: 2px dashed #83640f;
 }
 .pg-features a {
     font-size: 1.8em;
 }
 .pg-features a:hover {
-    color: #d93c4d;
+    color: #83640f;
 }
 .pg-features i.icon {
-    color: #d93c4d;
+    color: #83640f;
     margin: 0 50px;
     font-size: 10px;
 }
