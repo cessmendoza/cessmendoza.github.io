@@ -1560,12 +1560,12 @@ i.icon {
 }
 .social-links a .icon {
   position: relative;
-  color: #fff;
+  color: #83640f;
   transition: .5s;
   z-index: 3;
 }
 .social-links a:hover .icon {
-  color: #83640f;
+  color: #fff;
   transform: rotateY(360deg);
 }
 
