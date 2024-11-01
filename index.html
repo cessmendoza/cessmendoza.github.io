@@ -353,11 +353,15 @@
 					<div class="container">
 						<div class="row">
 							<h3>Quick Contact</h3>
+
 							<form action="https://formspree.io/f/mjkvyoep" method="POST" class="contact-form d-flex flex-wrap">
 								<input type="text" name="name" placeholder="Name" class="name mb-3" required>
 								<input type="email" name="email" placeholder="E-mail" class="mb-3" required>
 								<textarea name="message" placeholder="Message" style="height: 150px;" required></textarea>
 								
+								<!-- Hidden _next field to redirect after submission -->
+								<input type="hidden" name="_next" value="https://cessmendoza.github.io/">
+							
 								<div class="pix_btn btn-click text-center mt-5">
 									<button type="submit" class="btn btn-pill btn-large btn-outline-light mr-3" data-hover="click">
 										<span>Send Message</span>
@@ -365,6 +369,7 @@
 									</button>
 								</div>
 							</form>
+							
 							
 							
 						</div>
