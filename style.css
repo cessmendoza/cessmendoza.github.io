@@ -1,19 +1,10 @@
-/*
-Template Name: Christina
-Template URI: https://demo.templatesjungle.com/christina/
-Author: TemplatesJungle
-Author URI: https://templatesjungle.com/
-Description: Fashion Photographer is specially designed product packaged for Fashion Photographer by TemplatesJungle.
-*/
-
-/*--------------------------------------------------------------
-This is main CSS file that contains custom style rules used in this template
---------------------------------------------------------------*/
 
 /*------------------------------------*\
     Table of contents
 \*------------------------------------*/
 /*
+
+0. Cess CSS
 1. Normalize
 2. Base Styles
   - Clearfix
@@ -34,6 +25,37 @@ This is main CSS file that contains custom style rules used in this template
   - Responsive Utilities
 9. Table Styles
 10. Site Structure
+
+/*--------------------------------------------------------------
+/** 0. Cess CSS
+--------------------------------------------------------------*/
+/* Outer circle (first outline) */
+.outer-circle {
+  display: inline-block;
+  padding: 3px; 
+  border: 2px solid #83640f; 
+  border-radius: 50%;
+  
+}
+
+/* Inner circle (second outline) */
+.inner-circle {
+  padding: 2px; 
+  border: 2px solid rgb(0, 0, 0); 
+  border-radius: 50%;
+}
+
+/* Profile image */
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 /** 1. Normalize
