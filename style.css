@@ -33,7 +33,7 @@
 .outer-circle {
   display: inline-block;
   padding: 3px; 
-  border: 2px solid #83640f; 
+  border: 2px solid #a67c0a; 
   border-radius: 50%;
   
 }
@@ -288,7 +288,7 @@ a {
   color: #111;
 }
 a:hover {
-  color: #83640f;
+  color: #a67c0a;
   text-decoration: none;
 }
 ul, ol {
@@ -367,12 +367,12 @@ img {
   vertical-align: middle;
 }
 ::selection {
-  background: #83640f;
+  background: #a67c0a;
   color: #fff;
   text-shadow: none;
 }
 ::-moz-selection {
-  background: #83640f;
+  background: #a67c0a;
   color: #fff;
   text-shadow: none;
 }
@@ -660,7 +660,7 @@ abbr {
   background: #101010;
 }
 .colored {
-  color: #83640f !important;
+  color: #a67c0a !important;
 }
 .color-primary {
   color: #333 !important;
@@ -672,7 +672,7 @@ abbr {
   color: #c1c1c1 !important;
 }
 a.colored-grey:hover {
-  color: #83640f !important;
+  color: #a67c0a !important;
 }
 .text-left {
   text-align: left;
@@ -1383,11 +1383,11 @@ fieldset[disabled] a.btn {
 }
 .btn.btn-accent {
   color: #fff;
-  background-color: #83640f;
+  background-color: #a67c0a;
 }
 .btn.btn-accent:hover {
   color: #fff !important;
-  background-color: #83640f;
+  background-color: #a67c0a;
 }
 .btn.btn-outline-light,
 .btn.btn-outline-accent {
@@ -1408,7 +1408,7 @@ fieldset[disabled] a.btn {
 }
 .btn.btn-outline-accent {
   background: transparent;
-  border-color: #83640f;
+  border-color: #a67c0a;
   color: #f4efe6;
 }
 .btn.btn-outline-accent:hover {
@@ -1560,7 +1560,7 @@ i.icon {
 }
 .social-links a .icon {
   position: relative;
-  color: #83640f;
+  color: #a67c0a;
   transition: .5s;
   z-index: 3;
 }
@@ -1788,7 +1788,7 @@ tfoot {
     left: 0;
     right: 0;
     top: 0;
-    border-bottom: 1px solid #83640f;
+    border-bottom: 1px solid #a67c0a;
     margin: 0 auto;
 }
 h1.page-title {
@@ -2833,8 +2833,8 @@ a.postbox:hover .image-overlay {
     right: 30px;
     width: 150px;
     height: 150px;
-    border-top: 2px dashed #83640f;
-    border-right: 2px dashed #83640f;
+    border-top: 2px dashed #a67c0a;
+    border-right: 2px dashed #a67c0a;
 }
 .border-left-bottom {
     position: absolute;
@@ -2842,17 +2842,17 @@ a.postbox:hover .image-overlay {
     bottom: 30px;
     width: 150px;
     height: 150px;
-    border-left: 2px dashed #83640f;
-    border-bottom: 2px dashed #83640f;
+    border-left: 2px dashed #a67c0a;
+    border-bottom: 2px dashed #a67c0a;
 }
 .pg-features a {
     font-size: 1.8em;
 }
 .pg-features a:hover {
-    color: #83640f;
+    color: #a67c0a;
 }
 .pg-features i.icon {
-    color: #83640f;
+    color: #a67c0a;
     margin: 0 50px;
     font-size: 10px;
 }
