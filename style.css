@@ -69,6 +69,7 @@ a {
 /** 1. Normalize
 --------------------------------------------------------------*/
 html, body {
+  cursor: url("Halo_CursorCC4.cur"), auto;
   position: relative;
   width: 100%;
   height: 100%;
