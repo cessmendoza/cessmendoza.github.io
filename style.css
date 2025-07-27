@@ -3065,3 +3065,28 @@ a.postbox:hover .image-overlay {
     height: auto;
     z-index: -100;
 }
+
+
+
+/*--------------------------------------------------------------
+/** about cess
+--------------------------------------------------------------*/
+
+.education-card {
+  background-color: #1c1e22;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.education-card h5 {
+  font-weight: 600;
+}
+.education-card p {
+  font-size: 14px;
+}
+.education-card .year {
+  font-size: 16px;
+  color: #34d399;
+  font-weight: bold;
+}

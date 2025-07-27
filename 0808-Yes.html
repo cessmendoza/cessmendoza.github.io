@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>License to Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #fff0f6 0%, #ffe0ec 100%);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .card-container {
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .card {
+      width: 320px;
+      height: 480px;
+      border-radius: 20px;
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+      position: relative;
+      display: none;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .card-front {
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .card-front h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      color: #ff3399;
+    }
+
+    .card-back {
+      background-color: #ffccdd;
+      transform: rotateY(180deg);
+      text-align: center;
+    }
+
+    img.profile {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff66a3;
+    }
+
+    h1 {
+      color: #ff3399;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .button {
+      background: #ff66a3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      margin-top: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .date {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #cc3366;
+    }
+
+    .message {
+      font-size: 18px;
+      color: #660033;
+      margin: 20px 10px;
+    }
+
+    .quiz, .card, #secretPrompt {
+      display: none;
+    }
+
+    .quiz {
+      max-width: 420px;
+      background: #fff0f6;
+      padding: 30px;
+      border-radius: 30px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.2);
+      animation: fadeIn 1s ease-in-out;
+      border: 3px dashed #ffb6c1;
+    }
+
+    .quiz-title {
+      text-align: center;
+      font-size: 20px;
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      margin-bottom: 25px;
+    }
+
+    .question h3 {
+      font-size: 16px;
+      color: #b30059;
+      margin-bottom: 10px;
+    }
+
+    .option {
+      display: block;
+      margin: 8px 0;
+      padding: 10px 12px;
+      background: #fff;
+      border-radius: 20px;
+      border: 2px solid #ffe0ec;
+      cursor: pointer;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    .option:hover {
+      background: #ffe6ef;
+      transform: translateX(5px);
+    }
+
+    .option input {
+      margin-right: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .start-screen {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .start-screen h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff3399;
+    }
+
+    /* Secret Prompt Style */
+    #secretPrompt {
+      text-align: center;
+      margin-top: 20px;
+      background: #ffe6f0;
+      padding: 30px;
+      border-radius: 30px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.2);
+      border: 3px dashed #ffb6c1;
+    }
+
+    #secretPrompt input {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: 2px solid #ff99cc;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .digit-box {
+    width: 40px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ff99cc;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s;
+    }
+
+    .digit-box:focus {
+    border-color: #ff3399;
+    box-shadow: 0 0 10px rgba(255, 51, 153, 0.4);
+    }
+
+  </style>
+</head>
+<body>
+
+<canvas id="confetti-canvas" style="position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
+
+<div class="card-container">
+
+  <!-- Start screen -->
+  <div class="start-screen" id="startScreen">
+    <h1>Ready to unlock your License to Love? 💌</h1>
+    <button class="button" onclick="startQuiz()">Start Quiz 💖</button>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz" id="quiz">
+    <h2 class="quiz-title">💘 Unlock your License to Love 💘</h2>
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. Saan first date natin?</h3>
+        <label class="option"><input type="radio" name="q1" value="nuvali"/> Nuvali</label>
+        <label class="option"><input type="radio" name="q1" value="staRosa"/> SM Sta Rosa</label>
+        <label class="option"><input type="radio" name="q1" value="kentadia"/> Kentadia</label>
+      </div>
+      <div class="question">
+        <h3>2. Ano tawagan natin dati?</h3>
+        <label class="option"><input type="radio" name="q2" value="mavi&rori"/> Mavi & Rori</label>
+        <label class="option"><input type="radio" name="q2" value="cutiepie"/> Senyor & Madam</label>
+        <label class="option"><input type="radio" name="q2" value="lovers"/> Lovers</label>
+      </div>
+      <div class="question">
+        <h3>3. Saan ang first kiss?</h3>
+        <label class="option"><input type="radio" name="q3" value="kentadia"/> Kentadia</label>
+        <label class="option"><input type="radio" name="q3" value="nuvali"/> Nuvali</label>
+        <label class="option"><input type="radio" name="q3" value="room"/> Sa Room</label>
+      </div>
+      <center>
+        <button type="submit" class="button">Submit & Reveal 💌</button>
+      </center>
+    </form>
+  </div>
+
+  <!-- Secret Word Prompt -->
+    <div class="secret-word" id="secretPrompt">
+        <h2 style="color:#ff3399;">🔐 One last step!</h2>
+        <p>Enter the magic numbers of the day you said “I like you” 🗝️</p>
+
+        <div style="display: flex; justify-content: center; gap: 10px; margin: 20px 0;">
+            <input type="text" maxlength="1" class="digit-box" id="digit1" oninput="moveNext(this, 'digit2')">
+            <input type="text" maxlength="1" class="digit-box" id="digit2" oninput="moveNext(this, 'digit3')">
+            <input type="text" maxlength="1" class="digit-box" id="digit3" oninput="moveNext(this, 'digit4')">
+            <input type="text" maxlength="1" class="digit-box" id="digit4" oninput="moveNext(this, 'digit5')">
+            <input type="text" maxlength="1" class="digit-box" id="digit5" oninput="moveNext(this, 'digit6')">
+            <input type="text" maxlength="1" class="digit-box" id="digit6">
+        </div>
+
+        <button class="button" onclick="checkSecret()">Unlock 💖</button>
+    </div>
+
+  <!-- Card -->
+  <div class="card" onclick="flipCard()" id="loveCard">
+    <div class="card-face card-front">
+      <h2>Claim your license now</h2>
+      <p>Flip to reveal! 💌</p>
+    </div>
+    <div class="card-face card-back">
+      <img src="./images/pv.PNG" alt="Photo" class="profile"/>
+      <h1>License to Love</h1>
+      <p class="message">This certifies that you have the right to unlimited hugs, sweet messages, and constant love from Princess Lorraine. Claim it anytime, anywhere. 💕</p>
+      <p class="date">Effective Date: August 8, 2025</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const card = document.querySelector('.card');
+  let confettiStarted = false;
+
+  function flipCard() {
+    card.classList.toggle('flipped');
+    if (!confettiStarted) {
+      startConfetti();
+      confettiStarted = true;
+      setTimeout(() => stopConfetti(), 4000);
+    }
+  }
+
+  function startQuiz() {
+    document.getElementById('startScreen').style.display = 'none';
+    document.getElementById('quiz').style.display = 'block';
+  }
+
+  document.getElementById('quizForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const answers = {
+        q1: "kentadia",
+        q2: "mavi&rori",
+        q3: "nuvali"
+    };
+
+    let isCorrect = true;
+    for (let key in answers) {
+      const selected = document.querySelector(`input[name="${key}"]:checked`);
+      if (!selected || selected.value !== answers[key]) {
+        isCorrect = false;
+        break;
+      }
+    }
+
+    if (isCorrect) {
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('secretPrompt').style.display = 'block';
+    } else {
+      alert("Oops! May mali. Try again 😅");
+    }
+  });
+
+    function checkSecret() {
+    const digits = [
+        document.getElementById('digit1').value,
+        document.getElementById('digit2').value,
+        document.getElementById('digit3').value,
+        document.getElementById('digit4').value,
+        document.getElementById('digit5').value,
+        document.getElementById('digit6').value,
+    ];
+    const code = digits.join('');
+    const secretWord = "112723";
+
+    if (code === secretWord) {
+        document.getElementById('secretPrompt').style.display = 'none';
+        document.getElementById('loveCard').style.display = 'block';
+    } else {
+        alert("Oops! Mali ang magic numbers 🫣 Try ulit!");
+    }
+    }
+    
+    function moveNext(current, nextId) {
+  if (current.value.length === 1) {
+    const nextInput = document.getElementById(nextId);
+    if (nextInput) nextInput.focus();
+  }
+}
+
+
+
+  var confettiCanvas = document.getElementById('confetti-canvas');
+  var confetti = confettiCanvas.getContext('2d');
+  var confettiParticles = [];
+
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function createConfetti() {
+    for (let i = 0; i < 100; i++) {
+      confettiParticles.push({
+        x: random(0, window.innerWidth),
+        y: random(-window.innerHeight, 0),
+        r: random(5, 15),
+        d: random(1, 5),
+        color: `hsl(${Math.floor(random(0, 360))}, 100%, 70%)`,
+        tilt: random(-10, 10),
+        tiltAngle: 0,
+      });
+    }
+  }
+
+  function drawConfetti() {
+    confetti.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    confettiParticles.forEach(p => {
+      confetti.beginPath();
+      confetti.lineWidth = p.r;
+      confetti.strokeStyle = p.color;
+      confetti.moveTo(p.x + p.tilt, p.y);
+      confetti.lineTo(p.x + p.tilt + p.r / 2, p.y + p.r);
+      confetti.stroke();
+    });
+    updateConfetti();
+  }
+
+  function updateConfetti() {
+    confettiParticles.forEach(p => {
+      p.y += p.d;
+      p.tiltAngle += 0.1;
+      p.tilt = Math.sin(p.tiltAngle) * 15;
+    });
+  }
+
+  function startConfetti() {
+    confettiCanvas.width = window.innerWidth;
+    confettiCanvas.height = window.innerHeight;
+    createConfetti();
+    confettiInterval = setInterval(drawConfetti, 30);
+  }
+
+  function stopConfetti() {
+    clearInterval(confettiInterval);
+    confetti.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  }
+</script>
+</body>
+</html>
