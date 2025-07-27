@@ -29,6 +29,8 @@
   padding: 20px;
   box-sizing: border-box;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
 }
 
     .card {
@@ -246,14 +248,19 @@
 
   }
 }
-.card, 
 #secretPrompt {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto; /* This centers horizontally */
+  display: none;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px;
   box-sizing: border-box;
+}
+
+.card {
+  display: none;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
 }
 
 @media (max-width: 480px) {
