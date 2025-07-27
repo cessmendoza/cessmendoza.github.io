@@ -247,6 +247,18 @@
   max-width: 100%;
 }
 
+.digit-box {
+  width: 40px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #ff99cc;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
 @media (max-width: 400px) {
   #secretPrompt {
     padding: 20px;
@@ -263,9 +275,16 @@
   }
 
   .digit-box {
-    width: 32px;
-    height: 42px;
-    font-size: 18px;
+    width: 36px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .digit-wrapper {
+    justify-content: center;
+    gap: 8px;
+  }
+
   }
 }
 
