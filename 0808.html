@@ -246,7 +246,32 @@
 
   }
 }
+.card, 
+#secretPrompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* This centers horizontally */
+  box-sizing: border-box;
+}
 
+@media (max-width: 480px) {
+  .card-container {
+    padding: 20px;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  #secretPrompt {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
   </style>
 </head>
 <body>
