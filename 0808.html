@@ -227,9 +227,9 @@
     /* Secret Prompt Style */
 #secretPrompt {
   text-align: center;
-  margin: 20px 10px;
+  margin-top: 20px;
   background: #ffe6f0;
-  padding: 20px;
+  padding: 30px;
   border-radius: 30px;
   box-shadow: 0 0 25px rgba(255, 105, 180, 0.2);
   border: 3px dashed #ffb6c1;
@@ -238,29 +238,27 @@
   box-sizing: border-box;
 }
 
-    #secretPrompt input {
-      padding: 10px 20px;
-      border-radius: 20px;
-      border: 2px solid #ff99cc;
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
+@media (max-width: 400px) {
+  #secretPrompt {
+    padding: 20px;
+    margin: 15px;
+    border-radius: 20px;
+  }
 
-    .digit-box {
-    width: 40px;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    border: 2px solid #ff99cc;
-    border-radius: 10px;
-    outline: none;
-    transition: 0.2s;
-    }
+  #secretPrompt h2 {
+    font-size: 18px;
+  }
 
-    .digit-box:focus {
-    border-color: #ff3399;
-    box-shadow: 0 0 10px rgba(255, 51, 153, 0.4);
-    }
+  #secretPrompt p {
+    font-size: 14px;
+  }
+
+  .digit-box {
+    width: 32px;
+    height: 42px;
+    font-size: 18px;
+  }
+}
 
   </style>
 </head>
