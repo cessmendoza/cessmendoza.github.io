@@ -238,6 +238,15 @@
   box-sizing: border-box;
 }
 
+.digit-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  max-width: 100%;
+}
+
 @media (max-width: 400px) {
   #secretPrompt {
     padding: 20px;
@@ -307,7 +316,7 @@
         <h2 style="color:#ff3399;">🔐 One last step!</h2>
         <p>Enter the magic numbers of the day you said “I like you” 🗝️</p>
 
-        <div style="display: flex; justify-content: center; gap: 10px; margin: 20px 0;">
+      <div class="digit-wrapper">
             <input type="text" maxlength="1" class="digit-box" id="digit1" oninput="moveNext(this, 'digit2')">
             <input type="text" maxlength="1" class="digit-box" id="digit2" oninput="moveNext(this, 'digit3')">
             <input type="text" maxlength="1" class="digit-box" id="digit3" oninput="moveNext(this, 'digit4')">
