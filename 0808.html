@@ -59,14 +59,16 @@
       overflow-x: hidden;
     }
 
-    .card-container {
-      perspective: 1000px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-    }
+ .card-container {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 10px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
 
     .card {
       width: 320px;
