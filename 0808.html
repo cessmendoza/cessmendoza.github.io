@@ -6,6 +6,7 @@
   <title>License to Love</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
+<<<<<<< HEAD
     body {
   margin: 0;
   padding: 0;
@@ -15,6 +16,21 @@
 }
 
 /* ===== Card Container ===== */
+=======
+
+
+  body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #fff0f6 0%, #ffe0ec 100%);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+  
+    
+
+>>>>>>> 272b5a27cda281b47567ff049a48e594d9227540
 .card-container {
   perspective: 1000px;
   display: flex;
@@ -23,6 +39,13 @@
   min-height: 100vh;
   flex-direction: column;
   padding: 20px;
+<<<<<<< HEAD
+=======
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+>>>>>>> 272b5a27cda281b47567ff049a48e594d9227540
 }
 
 /* ===== License Card ===== */
@@ -99,11 +122,20 @@ h1 {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .date {
   margin-top: 10px;
   font-size: 16px;
   color: #cc3366;
 }
+=======
+    .date {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #cc3366;
+      font-weight:bold;
+    }
+>>>>>>> 272b5a27cda281b47567ff049a48e594d9227540
 
 .message {
   font-size: 18px;
@@ -180,7 +212,11 @@ h1 {
   color: #ff3399;
 }
 
+<<<<<<< HEAD
 /* ===== Secret Prompt Style ===== */
+=======
+    /* Secret Prompt Style */
+>>>>>>> 272b5a27cda281b47567ff049a48e594d9227540
 #secretPrompt {
   text-align: center;
   margin-top: 20px;
@@ -189,6 +225,7 @@ h1 {
   border-radius: 30px;
   box-shadow: 0 0 25px rgba(255, 105, 180, 0.2);
   border: 3px dashed #ffb6c1;
+<<<<<<< HEAD
 }
 
 #secretPrompt input {
@@ -278,6 +315,71 @@ h1 {
     font-size: 18px;
   }
 }
+=======
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.digit-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  max-width: 100%;
+}
+
+.digit-box {
+  width: 40px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #ff99cc;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
+@media (max-width: 400px) {
+  #secretPrompt {
+    padding: 20px;
+    margin: 15px;
+    border-radius: 20px;
+  }
+
+  #secretPrompt h2 {
+    font-size: 18px;
+  }
+
+  #secretPrompt p {
+    font-size: 14px;
+  }
+
+  .digit-box {
+    width: 36px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .digit-wrapper {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  }
+}
+#secretPrompt {
+  display: none;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+
+>>>>>>> 272b5a27cda281b47567ff049a48e594d9227540
 
 
   </style>
@@ -298,6 +400,7 @@ h1 {
       <button class="button" onclick="startQuiz()">Start Quiz 💖</button>
     </div>
 
+<<<<<<< HEAD
     <!-- Quiz -->
     <div class="quiz" id="quiz">
       <h2 class="quiz-title">💘 Unlock your License to Love 💘</h2>
@@ -307,6 +410,15 @@ h1 {
           <label class="option"><input type="radio" name="q1" value="nuvali"/> Nuvali</label>
           <label class="option"><input type="radio" name="q1" value="staRosa"/> SM Sta Rosa</label>
           <label class="option"><input type="radio" name="q1" value="kentadia"/> Kentadia</label>
+=======
+      <div class="digit-wrapper">
+            <input type="text" maxlength="1" class="digit-box" id="digit1" oninput="moveNext(this, 'digit2')">
+            <input type="text" maxlength="1" class="digit-box" id="digit2" oninput="moveNext(this, 'digit3')">
+            <input type="text" maxlength="1" class="digit-box" id="digit3" oninput="moveNext(this, 'digit4')">
+            <input type="text" maxlength="1" class="digit-box" id="digit4" oninput="moveNext(this, 'digit5')">
+            <input type="text" maxlength="1" class="digit-box" id="digit5" oninput="moveNext(this, 'digit6')">
+            <input type="text" maxlength="1" class="digit-box" id="digit6">
+>>>>>>> 272b5a27cda281b47567ff049a48e594d9227540
         </div>
         <div class="question">
           <h3>2. Ano tawagan natin dati?</h3>
