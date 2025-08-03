@@ -285,9 +285,6 @@ h1 {
 <body>
 
 
-<div id="mainContent" style="display:none;">
-  
-
   <canvas id="confetti-canvas" style="position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
 
   <div class="card-container">
@@ -358,76 +355,6 @@ h1 {
     </div>
 
   </div>
-</div>
-
-<div id="lockedMessage" style="text-align:center; padding:50px; display:none;">
-  <h1 style="color:#ff3399; font-family:'Pacifico', cursive;">
-    💖Come back on August 8 to unlock this page 💖
-  </h1>
-  <div id="countdown" style="margin-top: 30px; font-size: 24px; color: #b30059;"></div>
-</div>
-
-
-<script>
-  const today = new Date();
-  const month = today.getMonth() + 1; // 0-based months
-  const day = today.getDate();
-  
-  const releaseMonth = 8; // August
-  const releaseDay = 8;
-
-  const mainContent = document.getElementById('mainContent');
-  const lockedMessage = document.getElementById('lockedMessage');
-  const countdownEl = document.getElementById('countdown');
-
-  // Function to start countdown until August 8
-  function startCountdown() {
-    const releaseDate = new Date(today.getFullYear(), releaseMonth-1, releaseDay, 0, 0, 0);
-    const x = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = releaseDate.getTime() - now;
-
-      if (distance <= 0) {
-        clearInterval(x);
-        location.reload(); // reload to show content
-      } else {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownEl.innerHTML = `
-          <div class="countdown-box">
-            <div class="countdown-number">${days}</div>
-            <div class="countdown-label">Days</div>
-          </div>
-          <div class="countdown-box">
-            <div class="countdown-number">${hours}</div>
-            <div class="countdown-label">Hours</div>
-          </div>
-          <div class="countdown-box">
-            <div class="countdown-number">${minutes}</div>
-            <div class="countdown-label">Minutes</div>
-          </div>
-          <div class="countdown-box">
-            <div class="countdown-number">${seconds}</div>
-            <div class="countdown-label">Seconds</div>
-          </div>
-        `;
-      }
-    }, 1000);
-  }
-
-  // Check if it's August 8
-  if (month === releaseMonth && day >= releaseDay) {
-    mainContent.style.display = 'block';
-  } else {
-    lockedMessage.style.display = 'block';
-    startCountdown();
-  }
-</script>
-
-
 
 
 
